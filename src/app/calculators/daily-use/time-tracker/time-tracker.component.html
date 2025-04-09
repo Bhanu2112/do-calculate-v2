@@ -1,0 +1,84 @@
+<div class="grid md:grid-cols-1 lg:grid-cols-12 px-6 mt-8">
+  <!-- Wrapper to center first div -->
+  <div class="lg:col-span-9 flex justify-center">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-4xl  mx-auto p-6">
+      <div class="p-6">
+
+
+        <div class="p-6 mb-6 text-center">
+          <h2 class="text-4xl font-extrabold text-blue-700"> Time Tracker</h2>
+          <p class="text-lg text-gray-600 mt-2">Track your time efficiently and boost productivity with ease.</p>
+          <p class="text-sm text-gray-500 text-center p-2">Add a timer by entering a task name. Start and pause as needed. Reset or delete timers anytime. Monitor total tracked time to stay productive.</p>
+        </div>
+
+
+
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+        <div class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 mb-6">
+          <input type="text" [(ngModel)]="newTimerName" placeholder="What are you working on?"
+            class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            (keyup.enter)="createTimer()">
+          <button (click)="createTimer()"
+            class="px-5 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg hover:opacity-90 shadow-md">
+            ➕ Add Timer
+          </button>
+        </div>
+
+        <div *ngIf="timers.length === 0" class="text-center py-8 text-gray-500 dark:text-gray-400 italic">
+          <p>No timers yet. Add one to get started! ⏱️</p>
+        </div>
+
+        <div *ngIf="timers.length > 0" class="mb-4 font-semibold text-lg text-gray-700 dark:text-gray-300">
+          Total Time: {{ formatTime(totalTime) }} ⏲️
+        </div>
+
+        <div class="space-y-4">
+          <div *ngFor="let timer of timers"
+            class="p-5 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md hover:scale-105 transition-transform">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div class="w-4 h-4 rounded-full" [ngClass]="timer.colorClass"></div>
+                <h3 class="text-lg font-medium text-gray-800 dark:text-white">{{ timer.name }}</h3>
+              </div>
+              <div class="text-xl font-mono text-gray-800 dark:text-white">{{ formatTime(timer.duration) }}</div>
+            </div>
+
+            <div class="flex justify-end space-x-2 mt-3">
+              <button (click)="toggleTimer(timer)"
+                class="px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-md"
+                [ngClass]="timer.isRunning ? 'bg-red-500 text-white hover:bg-red-600' : 'bg-green-500 text-white hover:bg-green-600'">
+                {{ timer.isRunning ? '⏸ Stop' : '▶ Start' }}
+              </button>
+              <button (click)="resetTimer(timer)"
+                class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white rounded-lg text-sm font-medium hover:bg-gray-400 dark:hover:bg-gray-500 shadow-md">
+                🔄 Reset
+              </button>
+              <button (click)="deleteTimer(timer)"
+                class="px-4 py-2 bg-red-200 text-red-800 rounded-lg text-sm font-medium hover:bg-red-300 dark:bg-red-800 dark:text-red-200 dark:hover:bg-red-700 shadow-md">
+                ❌ Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md mt-6">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">💡 Tips for Effective Time Tracking</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>🛠️ Break down large tasks into smaller, manageable chunks.</li>
+          <li>⏰ Use the Pomodoro technique: 25 min work, 5 min break.</li>
+          <li>📊 Review your tracked time weekly to improve productivity.</li>
+          <li>🔄 Be consistent with tracking for accurate insights.</li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="lg:col-span-3 p-6">
+
+    <app-similarcalculators [relatedCalculators]="calculators"></app-similarcalculators>
+  </div>
+</div>

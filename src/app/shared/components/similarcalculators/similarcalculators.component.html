@@ -1,0 +1,45 @@
+<!-- <div class="w-full md:w-72 bg-white rounded-2xl shadow-lg overflow-hidden m-4">
+  <div class="p-5">
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Related Calculators</h3>
+    <ul class="space-y-3">
+      @for (calculator of relatedCalculators; track $index) {
+      <li>
+        <a href="#" class="block p-3 rounded-lg flex items-center gap-3 bg-gradient-to-r from-gray-50 to-white hover:from-indigo-100 hover:to-indigo-50 text-indigo-700 font-medium shadow-sm transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          <span>{{ calculator }}</span>
+        </a>
+      </li>
+    }
+    </ul>
+  </div>
+</div> -->
+
+
+
+<div class="w-full md:w-72 bg-white rounded-2xl shadow-lg overflow-hidden m-4">
+  <div class="p-5">
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">Related Calculators</h3>
+    <ul class="space-y-3">
+      <ng-container *ngFor="let calculator of showAll ? relatedCalculators : relatedCalculators.slice(0, 7); let i = index">
+        <li>
+          <a href="#" class="block p-3 rounded-lg flex items-center gap-3 bg-gradient-to-r from-gray-50 to-white hover:from-indigo-100 hover:to-indigo-50 text-indigo-700 font-medium shadow-sm transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <span>{{ calculator }}</span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+
+    <!-- Show More / Show Less Button -->
+    <div *ngIf="relatedCalculators.length > 7" class="mt-4 text-center">
+      <button (click)="showAll = !showAll" class="text-indigo-600 hover:underline font-medium">
+        {{ showAll ? 'Show Less' : 'Show More' }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+
+
+<div class="bg-gradient-to-b from-blue-600 via-blue-400 to-blue-0 text-white py-24">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-extrabold mb-6 tracking-tight">
+      {{ category.name}} Calculators
+    </h2>
+    <p class="max-w-2xl mx-auto text-lg text-blue-100 mb-10">
+      {{category.description}}
+    </p>
+    <form class="relative max-w-md mx-auto" (ngSubmit)="onSubmit()">
+      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <span class="material-icons text-blue-500">search</span>
+      </div>
+      <input
+        type="text"
+        placeholder="Search calculators..."
+        class="w-full pl-10 pr-4 py-3 rounded-full shadow-lg border-transparent focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-700 bg-white"
+        id="searchInput"
+        [(ngModel)]="searchTerm"
+        name="searchTerm" />
+      </form>
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+<app-calculatorlistcomponent [calculators]="calculators" [searchTerm]="searchTerm" ngSkipHydration></app-calculatorlistcomponent>
+
+

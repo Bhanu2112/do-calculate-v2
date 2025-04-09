@@ -1,0 +1,167 @@
+
+
+
+<div class="grid md:grid-cols-1 lg:grid-cols-12 px-6 mt-8">
+  <!-- Wrapper to center first div -->
+  <div class="lg:col-span-9 flex justify-center">
+
+
+<div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-4xl  mx-auto p-6">
+  <div class="p-8">
+    <div class="text-center mb-6">
+      <h2 class="md:text-3xl font-bold text-xl text-gray-800">Percentage Calculator</h2>
+      <p class="text-gray-500 mt-1 text-sm">Effortless Percentage Calculations – Fast, Accurate, and Simple!</p>
+    </div>
+
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <div *ngFor="let type of calculationTypes"
+         class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 cursor-pointer transition-all hover:shadow-lg"
+         [ngClass]="{'border-2 border-blue-500 dark:border-blue-400': selectedType === type.id}"
+         (click)="selectCalculationType(type.id)">
+      <h3 class="font-medium text-gray-800 dark:text-white mb-2">{{ type.name }}</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">{{ type.description }}</p>
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6 transition-colors">
+    <!-- Percentage of a Number -->
+    <div *ngIf="selectedType === 'percentOfNumber'" class="space-y-6">
+      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Percentage of a Number</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Percentage (%)</label>
+          <input type="number" [(ngModel)]="percentValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number</label>
+          <input type="number" [(ngModel)]="numberValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+        <p class="text-blue-800 dark:text-blue-200 font-medium">Result:</p>
+        <p class="text-2xl font-bold text-blue-600 dark:text-blue-300">{{ formatNumber(percentOfNumberResult) }}</p>
+        <p class="text-sm text-blue-800 dark:text-blue-200">{{ percentValue }}% of {{ numberValue }} = {{ formatNumber(percentOfNumberResult) }}</p>
+      </div>
+    </div>
+
+    <!-- Percentage Change -->
+    <div *ngIf="selectedType === 'percentChange'" class="space-y-6">
+      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Percentage Change</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Starting Value</label>
+          <input type="number" [(ngModel)]="startValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Final Value</label>
+          <input type="number" [(ngModel)]="endValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+        <p class="text-blue-800 dark:text-blue-200 font-medium">Result:</p>
+        <p class="text-2xl font-bold text-blue-600 dark:text-blue-300">{{ formatNumber(percentChangeResult) }}%</p>
+        <p class="text-sm text-blue-800 dark:text-blue-200">
+          The change from {{ startValue }} to {{ endValue }} is
+          <span [ngClass]="percentChangeResult >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'">
+            {{ percentChangeResult >= 0 ? 'an increase' : 'a decrease' }} of {{ formatNumber(Math.abs(percentChangeResult)) }}%
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Find Percentage -->
+    <div *ngIf="selectedType === 'findPercentage'" class="space-y-6">
+      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Find Percentage</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Part Value</label>
+          <input type="number" [(ngModel)]="partValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Whole Value</label>
+          <input type="number" [(ngModel)]="wholeValue" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+      </div>
+
+      <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+        <p class="text-blue-800 dark:text-blue-200 font-medium">Result:</p>
+        <p class="text-2xl font-bold text-blue-600 dark:text-blue-300">{{ formatNumber(findPercentageResult) }}%</p>
+        <p class="text-sm text-blue-800 dark:text-blue-200">{{ partValue }} is {{ formatNumber(findPercentageResult) }}% of {{ wholeValue }}</p>
+      </div>
+    </div>
+
+    <!-- Tip Calculator -->
+    <div *ngIf="selectedType === 'tipCalculator'" class="space-y-6">
+      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Tip Calculator</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Bill Amount ($)</label>
+          <input type="number" [(ngModel)]="billAmount" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tip Percentage (%)</label>
+          <input type="number" [(ngModel)]="tipPercent" (ngModelChange)="calculateResult()" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+          <p class="text-blue-800 dark:text-blue-200 font-medium">Tip Amount:</p>
+          <p class="text-2xl font-bold text-blue-600 dark:text-blue-300">{{ formatNumber(tipAmount) }}</p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900 rounded-lg p-4">
+          <p class="text-green-800 dark:text-green-200 font-medium">Total Bill:</p>
+          <p class="text-2xl font-bold text-green-600 dark:text-green-300">{{ formatNumber(totalBill) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Section -->
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="md:text-xl text-sm font-semibold text-gray-800 dark:text-white">Calculation History</h2>
+      <button *ngIf="calculationHistory.length > 0"
+              class="px-3 py-1 md:text-sm text-[8px] text-white bg-red-500 hover:bg-red-600 rounded transition-colors"
+              (click)="clearHistory()">
+        Clear History
+      </button>
+    </div>
+
+    <div *ngIf="calculationHistory.length === 0" class="text-center py-6 text-gray-500 dark:text-gray-400">
+      <p>No calculation history yet</p>
+    </div>
+
+    <div *ngIf="calculationHistory.length > 0" class="space-y-2">
+      <div *ngFor="let item of calculationHistory"
+           class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700 text-[10px] md:text-sm dark:text-gray-300">{{ item.type }}</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 text-[10px] md:text-sm ">{{ item.timestamp | date:'short' }}</span>
+        </div>
+        <div class="mt-1 text-sm text-gray-600 dark:text-gray-400 text-[10px] md:text-sm">{{ item.inputs }}</div>
+        <div class="mt-1 font-medium text-blue-600 dark:text-blue-400 text-[10px] md:text-sm">{{ item.result }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-3 p-6">
+
+  <app-similarcalculators [relatedCalculators]="calculators"></app-similarcalculators>
+</div>
+</div>

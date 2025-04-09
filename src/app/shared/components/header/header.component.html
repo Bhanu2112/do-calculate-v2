@@ -1,0 +1,114 @@
+<header class="bg-white sticky top-0 z-50 shadow-lg backdrop-blur-sm bg-white/95">
+  <!-- Announcement Bar -->
+  <div class="bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 py-2 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0" style="background-size: 16px 16px; background-image: radial-gradient(circle, white 1px, transparent 1px);"></div>
+    </div>
+    <div class="container mx-auto px-4">
+      <p class="text-white text-sm text-center font-medium tracking-wide flex items-center justify-center">
+        <span class="inline-block mr-2">✨</span>
+        New calculators added! Try our latest financial tools
+        <a href="#" class="ml-2 underline underline-offset-2 font-semibold hover:text-blue-100 transition-colors duration-200">Explore now</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-2.5 rounded-xl mr-3 shadow-md">
+          <mat-icon>calculate</mat-icon>
+        </div>
+        <a href="#"  class="font-extrabold text-2xl tracking-tight hover:text-blue-600 transition-colors duration-300" style="font-family: cursive;">
+          <span>DoCalculate</span><span class=" text-sm">.in</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button - Only visible on mobile -->
+      <button class="block lg:hidden rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none transition duration-150 ease-in-out" aria-expanded="false">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- Desktop Navigation - Only visible on desktop -->
+      <div class="hidden lg:block">
+        <nav class="flex space-x-1">
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 border-b-2 border-transparent hover:border-blue-600 transition-all duration-200">
+            <mat-icon class="mr-2 text-blue-600">home</mat-icon>
+            Home
+          </a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 border-b-2 border-transparent hover:border-blue-600 transition-all duration-200">
+            <mat-icon class="mr-2 text-blue-600">calculate</mat-icon>
+            Calculators
+          </a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 border-b-2 border-transparent hover:border-blue-600 transition-all duration-200">
+            <mat-icon class="mr-2 text-blue-600">info</mat-icon>
+            About
+          </a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 border-b-2 border-transparent hover:border-blue-600 transition-all duration-200">
+            <mat-icon class="mr-2 text-blue-600">email</mat-icon>
+            Contact
+          </a>
+        </nav>
+      </div>
+
+      <!-- Action Buttons - Only visible on desktop -->
+      <div class="hidden lg:flex items-center space-x-3">
+        <div class="relative">
+          <select class="appearance-none bg-gray-50 text-gray-800 px-4 py-2 pl-10 pr-10 rounded-lg cursor-pointer border border-gray-200 hover:border-blue-300 hover:bg-white focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all duration-200">
+            <option>English</option>
+            <option>हिंदी</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">
+            <mat-icon>language</mat-icon>
+          </div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500">
+            <mat-icon>arrow_drop_down</mat-icon>
+          </div>
+        </div>
+        <button class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-5 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center font-medium">
+          <mat-icon class="mr-1">bolt</mat-icon>
+          Get Started
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu - Hidden by default, should be toggled via JavaScript -->
+    <div class="hidden">
+      <nav class="py-3 space-y-2">
+        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200">
+          <mat-icon class="mr-2 text-blue-600">home</mat-icon>
+          Home
+        </a>
+        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200">
+          <mat-icon class="mr-2 text-blue-600">calculate</mat-icon>
+          Calculators
+        </a>
+        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200">
+          <mat-icon class="mr-2 text-blue-600">info</mat-icon>
+          About
+        </a>
+        <a href="#" class="text-gray-700 hover:text-blue-600 font-medium flex items-center px-4 py-2 rounded-lg hover:bg-blue-50 transition-all duration-200">
+          <mat-icon class="mr-2 text-blue-600">email</mat-icon>
+          Contact
+        </a>
+        <div class="flex items-center px-4 py-2">
+          <select class="w-full appearance-none bg-gray-50 text-gray-800 px-4 py-2 pl-10 rounded-lg cursor-pointer border border-gray-200 focus:outline-none">
+            <option>English</option>
+            <option>हिंदी</option>
+          </select>
+          <div class="pointer-events-none absolute ml-3 text-blue-600">
+            <mat-icon>language</mat-icon>
+          </div>
+        </div>
+        <div class="px-4">
+          <button class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2 rounded-lg shadow-md flex items-center justify-center font-medium">
+            <mat-icon class="mr-1">bolt</mat-icon>
+            Get Started
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,345 @@
+{
+  "categories": [
+    {
+      "id": "financial",
+      "name": "Financial",
+      "description": "Loan, Investment & Tax Calculators",
+      "icon": "trending_up",
+      "color": "blue",
+      "calculators": [
+        "EMI Calculator",
+        "Loan Calculator",
+        "Investment Calculator",
+        "Tax Calculator",
+        "Retirement Planner",
+        "Compound Interest Calculator",
+        "Retirement Planning Calculator",
+        "Systematic Investment Plan (SIP) Calculator",
+        "Mutual Fund Return Estimator",
+        "Inflation Impact Calculator",
+        "Debt Consolidation Calculator",
+        "Stock Market Return Projection",
+        "Forex Exchange Rate Analysis",
+        "Insurance Premium Calculator",
+        "Wealth Accumulation Simulator"
+      ],
+      "active": true,
+      "featured": true
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "description": "BMI, Fitness & Nutrition Tools",
+      "icon": "medical_services",
+      "color": "green",
+      "calculators": [
+        "BMI Calculator",
+        "Calorie Calculator",
+        "Fitness Planner",
+        "Body Fat Percentage",
+        "Metabolic Rate Calculator",
+        "Nutrition Tracker",
+        "Metabolic Rate (BMR) Calculator",
+        "Ideal Weight Calculator",
+        "Pregnancy Due Date Calculator",
+        "Fertility Window Tracker",
+        "Nutrition Macronutrient Calculator",
+        "Sleep Cycle Optimizer",
+        "Hydration Requirement Calculator",
+        "Protein and Supplement Intake Calculator"
+      ],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "agricultural",
+      "name": "Agricultural",
+      "description": "Crop Yield & Farming Insights",
+      "icon": "agriculture",
+      "color": "orange",
+      "calculators": [
+        "Crop Yield Calculator",
+        "Irrigation Planner",
+        "Fertilizer Calculator",
+        "Land Productivity",
+        "Seed Rate Calculator",
+        "Harvest Profit Estimator",
+        "Fertilizer Requirement Calculator",
+        "Crop Profitability Estimator",
+        "Pesticide and Herbicide Dosage Calculator",
+        "Farm Equipment ROI Calculator",
+        "Land Area Conversion Tool",
+        "Soil Nutrient Analysis",
+        "Crop Insurance Risk Assessment",
+        "Greenhouse Gas Emission Calculator for Farms"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "daily-use",
+      "name": "Daily Use",
+      "description": "Converters, Time & Utility Tools",
+      "icon": "calculate",
+      "color": "purple",
+      "calculators": [
+        "Age Calculator",
+        "Unit Converter",
+        "Currency Converter",
+        "Percentage Calculator",
+        "Time Tracker",
+        "Discount Calculator",
+        "Advanced Unit Converter (Scientific, Engineering)",
+        "Cryptocurrency Converter",
+        "Global Currency Trend Analyzer",
+        "Digital Storage Converter",
+        "Scientific Notation Converter",
+        "Programming Language Unit Converters",
+        "Length Converter",
+        "Temperature Converter",
+        "Weight Converter",
+        "Work Hours Calculator",
+        "Temperature Converter",
+        "Date Difference Calculator",
+        "Currency Converter",
+        "Savings Calculator",
+        "Compound Interest",
+        "Tip Calculator"
+
+      ],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "education",
+      "name": "Education & Career",
+      "description": "Student, Career and skill based calculators",
+      "icon": "school",
+      "color": "indigo",
+      "calculators": [
+        "Student Loan Repayment Planner",
+        "Scholarship Matching Tool",
+        "Career Salary Projection",
+        "Education Investment Calculator",
+        "Skill Development ROI Calculator",
+        "Exam Score Predictor",
+        "College Affordability Index",
+        "Professional Certification Cost-Benefit Analysis"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "real-estate",
+      "name": "Real Estate",
+      "description": "Property and Home Calculators",
+      "icon": "home",
+      "color": "brown",
+      "calculators": [
+        "Mortgage Affordability Calculator",
+        "Property Tax Estimator",
+        "Rental Income Projector",
+        "Home Renovation Cost Calculator",
+        "Property Appreciation Predictor",
+        "Construction Material Cost Estimator",
+        "Commercial vs. Residential Investment Comparator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "environment",
+      "name": "Sustainability",
+      "description": "Tools for environment and sustainability",
+      "icon": "eco",
+      "color": "teal",
+      "calculators": [
+        "Carbon Footprint Calculator",
+        "Renewable Energy Savings Estimator",
+        "Home Energy Efficiency Calculator",
+        "Water Conservation Impact Calculator",
+        "Recycling Savings Calculator",
+        "Electric Vehicle Cost Comparison",
+        "Solar Panel ROI Calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Personal Productivity and Time Management tools",
+      "icon": "schedule",
+      "color": "amber",
+      "calculators": [
+        "Time Management Optimizer",
+        "Productivity Score Calculator",
+        "Goal Achievement Tracker",
+        "Skill Learning Time Estimator",
+        "Work-Life Balance Analyzer",
+        "Freelance Rate Calculator",
+        "Personal Project Cost Tracker"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "regional",
+      "name": "Regional & Cultural",
+      "description": "Regional and Cultural Specific tools",
+      "icon": "public",
+      "color": "lime",
+      "calculators": [
+        "Festival Expense Planner",
+        "Wedding Budget Calculator",
+        "Regional Subsidy and Benefit Estimator",
+        "Cultural Event Cost Tracker",
+        "Regional Investment Zone Comparator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "tech",
+      "name": "Emerging Tech",
+      "description": "Calculators for emerging technologies",
+      "icon": "memory",
+      "color": "deep-purple",
+      "calculators": [
+        "Blockchain Transaction Cost Calculator",
+        "AI Model Training Cost Estimator",
+        "Cloud Computing Resource Optimizer",
+        "Startup Funding Runway Calculator",
+        "Tech Skill Market Value Estimator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "travel",
+      "name": "Travel & Logistics",
+      "description": "Travel planning and logistics tools",
+      "icon": "flight",
+      "color": "light-blue",
+      "calculators": [
+        "Trip Cost Calculator",
+        "Travel Time Estimator",
+        "Baggage Weight Calculator",
+        "Currency Exchange Rate Predictor",
+        "International Driving Permit Calculator",
+        "Packing list calculator",
+        "Carbon offset calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "cooking",
+      "name": "Cooking & Culinary",
+      "description": "Cooking and recipe tools",
+      "icon": "restaurant",
+      "color": "red",
+      "calculators": [
+        "Recipe Ingredient Converter",
+        "Cooking Time Adjuster",
+        "Calorie Adjuster",
+        "Alcohol Content Calculator",
+        "Spice ratio calculator",
+        "Food waste calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "home-diy",
+      "name": "Home Improvement & DIY",
+      "description": "Home renovation and DIY tools",
+      "icon": "build",
+      "color": "grey",
+      "calculators": [
+        "Paint Coverage Calculator",
+        "Tile/Flooring Area Calculator",
+        "Lumber Volume Calculator",
+        "Electrical Wiring Load Calculator",
+        "Gardening planting calculator",
+        "Tool rental cost calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment & Recreation",
+      "description": "Entertainment and recreation tools",
+      "icon": "sports_esports",
+      "color": "deep-orange",
+      "calculators": [
+        "Event Budget Planner",
+        "Movie/TV Show Binge-Watch Time Calculator",
+        "Gaming PC Build Cost Estimator",
+        "Photography depth of field calculator",
+        "Music tempo and beat calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive",
+      "description": "Vehicle and car related tools",
+      "icon": "directions_car",
+      "color": "blue-grey",
+      "calculators": [
+        "Fuel Efficiency Calculator",
+        "Vehicle Depreciation Calculator",
+        "Car Loan Affordability Calculator",
+        "Tire Size Calculator",
+        "Stopping distance calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "legal",
+      "name": "Legal & Administrative",
+      "description": "Legal and administrative tools",
+      "icon": "gavel",
+      "color": "brown",
+      "calculators": [
+        "Document word count and reading time",
+        "Notary fee calculator",
+        "Simple legal interest calculator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "shipping",
+      "name": "Shipping & Logistics",
+      "description": "Shipping and logistics tools",
+      "icon": "local_shipping",
+      "color": "indigo",
+      "calculators": [
+        "Shipping cost estimator",
+        "Package volume calculator",
+        "Delivery time estimator"
+      ],
+      "active": false,
+      "featured": false
+    },
+    {
+      "id": "pets",
+      "name": "Pets",
+      "description": "Pet related tools",
+      "icon": "pets",
+      "color": "pink",
+      "calculators": [
+        "Pet food portion calculator",
+        "Pet age calculator",
+        "Pet travel cost estimator"
+      ],
+      "active": false,
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<div class="grid md:grid-cols-1 lg:grid-cols-12 px-6 mt-8">
+  <div class="lg:col-span-9 flex justify-center">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-4xl  mx-auto p-6">
+      <div class=" p-8">
+        <div class=" text-center">
+
+          <div class=" mb-6 p-6">
+            <h2 class="text-3xl font-bold text-blue-800">Digital Storage Converter</h2>
+            <p class="text-gray-500 mt-1">Convert between different units of digital storage precisely and quickly</p>
+          </div>
+        </div>
+
+        <div class="converter-card">
+          <div class="conversion-container">
+
+            <div class="conversion-input">
+              <input type="number" [(ngModel)]="inputValue" (ngModelChange)="onFromValueChange()" min="0">
+              <select [(ngModel)]="fromUnit" (ngModelChange)="convert()">
+                <option *ngFor="let unit of units" [ngValue]="unit.name">{{unit.name}} ({{ unit.symbol }})</option>
+              </select>
+            </div>
+
+            <button class="swap-button" (click)="swapUnits()">
+              <!-- <i class="fas fa-exchange-alt"></i> -->
+              <mat-icon>swap_horiz</mat-icon>
+            </button>
+
+            <div class="conversion-output">
+              <input type="number" [(ngModel)]="toValue" readonly>
+              <select [(ngModel)]="toUnit" (ngModelChange)="convert()">
+                <option *ngFor="let unit of units" [ngValue]="unit.name">{{unit.name}} ({{ unit.symbol }}) </option>
+              </select>
+            </div>
+          </div>
+          <div class="result-display">
+            <div class="result-text">
+              <p>{{formatValue(inputValue)}} {{fromUnit}} = {{formatValue(toValue)}} {{toUnit}}</p>
+            </div>
+            <button class="copy-button" (click)="copyResult()">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+
+        </div>
+
+        <div class="history-card" *ngIf="historyItems.length > 0">
+          <div class="history-header">
+            <h2>Recent Conversions</h2>
+            <button class="clear-button bg-red-500" (click)="clearHistory()">Clear</button>
+          </div>
+          <ul class="history-list">
+            <li *ngFor="let item of historyItems">
+              <span>{{item.from}} = {{item.to}}</span>
+              <span class="history-time">{{item.timestamp | date:'shortTime'}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lg:col-span-3 p-6">
+
+    <app-similarcalculators [relatedCalculators]="calculators"></app-similarcalculators>
+  </div>
+</div>

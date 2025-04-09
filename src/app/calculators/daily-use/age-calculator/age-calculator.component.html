@@ -1,0 +1,74 @@
+
+
+<!-- ..... -->
+
+<div class="grid md:grid-cols-1 lg:grid-cols-12 px-6 mt-8">
+  <!-- Wrapper to center first div -->
+  <div class="lg:col-span-9 flex justify-center">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-4xl  mx-auto p-6">
+      <div class="p-8">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-gray-800">Age Calculator</h2>
+          <p class="text-gray-500 mt-1">Find out your exact age in years, months, and days</p>
+        </div>
+
+        <div class="mb-6">
+          <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-2">Date of Birth:</label>
+          <input
+            type="date"
+            id="birthDate"
+            [(ngModel)]="birthDate"
+            class="block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          >
+        </div>
+
+        <button
+          (click)="calculateAge()"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none"
+        >
+          Calculate Age
+        </button>
+
+        <div *ngIf="age" class="mt-8 bg-gray-50 rounded-lg p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Your Age is:</h3>
+
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="bg-white p-4 rounded-lg shadow">
+              <span class="block text-3xl font-bold text-indigo-600">{{age.years}}</span>
+              <span class="text-gray-500">years</span>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+              <span class="block text-3xl font-bold text-indigo-600">{{age.months}}</span>
+              <span class="text-gray-500">months</span>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+              <span class="block text-3xl font-bold text-indigo-600">{{age.days}}</span>
+              <span class="text-gray-500">days</span>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-white rounded-lg p-4 shadow">
+            <h4 class="font-medium text-gray-700 mb-3">Life in different units of time:</h4>
+            <div class="space-y-2">
+              <p class="text-gray-600"><span class="font-semibold">Decades:</span> {{(age.years / 10).toFixed(1)}} decades of experiences</p>
+              <p class="text-gray-600"><span class="font-semibold">Days:</span> {{age.totalDays.toLocaleString()}} days of wonderful life</p>
+              <p class="text-gray-600"><span class="font-semibold">Hours:</span> {{(age.totalDays * 24).toLocaleString()}} hours of memories</p>
+              <p class="text-gray-600"><span class="font-semibold">Minutes:</span> {{(age.totalDays * 24 * 60).toLocaleString()}} minutes of moments</p>
+              <p class="text-gray-600"><span class="font-semibold">Seconds:</span> {{(age.totalDays * 24 * 60 * 60).toLocaleString()}} seconds of life</p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-gray-200 text-center text-sm text-gray-500">
+            <p>Every second is precious. Make the most of your time!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second div (3 columns) -->
+  <div class="lg:col-span-3 p-6">
+
+    <app-similarcalculators [relatedCalculators]="calculators"></app-similarcalculators>
+  </div>
+</div>
