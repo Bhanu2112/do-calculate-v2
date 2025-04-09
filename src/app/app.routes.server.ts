@@ -5,5 +5,9 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: '**',
     renderMode: RenderMode.Prerender
+  },
+  {
+    path:'calculators/categories/:category',
+    renderMode: RenderMode.Server
   }
 ];
