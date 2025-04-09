@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/calculator-app",
+    "public": "dist/calculator-app/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
