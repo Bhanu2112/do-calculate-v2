@@ -6,10 +6,10 @@
   <!-- Wrapper to center first div -->
   <div class="lg:col-span-9 flex justify-center">
     <div class="bg-white rounded-xl shadow-md overflow-hidden w-full max-w-4xl  mx-auto p-6">
-      <div class="p-8">
+      <div class="md:p-8">
         <div class="text-center mb-6">
-          <h2 class="text-3xl font-bold text-gray-800">Age Calculator</h2>
-          <p class="text-gray-500 mt-1">Find out your exact age in years, months, and days</p>
+          <h2 class="text-2xl md:text-3xl  font-bold text-gray-800">Age Calculator</h2>
+          <p class="text-gray-500 mt-1 md:text-lg text-sm">Find out your exact age in years, months, and days</p>
         </div>
 
         <div class="mb-6">
@@ -29,7 +29,7 @@
           Calculate Age
         </button>
 
-        <div *ngIf="age" class="mt-8 bg-gray-50 rounded-lg p-4">
+        <div *ngIf="age" class="mt-8  rounded-lg md:p-8 ">
           <h3 class="text-lg font-semibold text-gray-800 mb-3">Your Age is:</h3>
 
           <div class="grid grid-cols-3 gap-4 text-center">
